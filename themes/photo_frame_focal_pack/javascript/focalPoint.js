@@ -92,7 +92,6 @@
 
 		resetFocalPoint: function() {
 			if(!this.initialized) {
-				console.log(this.getX(), this.getY());
 				this.setFocalPoint(this.getX(), this.getY());
 			}
 			else {
@@ -134,21 +133,10 @@
 			});
 			*/
 
-			this.bind('resize', function() {
-				console.log('resize');
-			});
-
 			this.bind('saveCropStart', function() {
 				t.initialized = false;
 				t.save(t.getData(), true);
 			})
-
-			this.bind('resizeRenderCallback', function() {
-				console.log('resizeRenderCallback');
-				if(t.initialized) {
-					console.log(t.getX(), t.getY())
-				}
-			});
 
 			this.bind('initCrop', function() {
 				t.window.ui.focalPoint.draggable('option', 'containment', t.cropPhoto().ui.cropPhoto);
@@ -187,12 +175,6 @@
 
 		startCrop: function() {
 			this.initialized = false;
-
-			if(manipulation = this.getManipulation()) {
-				console.log(manipulation);
-				//this.x = manipulation.data.x;
-				//this.y = manipulation.data.y;
-			}
 		},
 
 		getData: function() {
