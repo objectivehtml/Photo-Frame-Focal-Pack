@@ -1,0 +1,10 @@
+.photo-frame-focal-point-wrapper .photo-frame-small { width: 100px; }
+
+.photo-frame-focal-point {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1499;
+	width: 40px;
+	cursor: move;
+}
