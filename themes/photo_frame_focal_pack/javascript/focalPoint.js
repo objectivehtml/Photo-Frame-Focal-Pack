@@ -91,6 +91,10 @@
 		},
 
 		resetFocalPoint: function() {
+			if(!this.getManipulation().visible) {
+				this.hide();
+			}
+
 			if(!this.initialized) {
 				this.setFocalPoint(this.getX(), this.getY());
 			}
