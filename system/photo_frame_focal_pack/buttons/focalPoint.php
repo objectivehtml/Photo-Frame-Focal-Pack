@@ -42,4 +42,21 @@ class FocalPointButton extends PhotoFrameButton {
 	{
 		
 	}
+
+	public function settings($data)
+	{
+		return array(
+			'photo_frame_disable_regular_crop' => array(
+				'label' 	  => 'Allow Only Focal Cropping?',
+				'description' => 'If yes, this will disable the default cropping utility and only allow users to set a focal point.',
+				'type'        => 'select',
+				'settings'    => array(
+					'options' => array(
+						'true'  => 'True',
+						'false' => 'False',
+					)
+				)
+			)
+		);
+	}
 }
