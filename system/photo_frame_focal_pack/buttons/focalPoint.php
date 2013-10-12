@@ -23,7 +23,10 @@ class FocalPointButton extends PhotoFrameButton {
 	{
 		$manipulations = json_decode($vars['manipulations']);
 
-		$manipulation  = isset($manipulations->focalpoint) ? $manipulations->focalpoint->data : array();
+		$manipulation  = isset($manipulations->focalpoint) ? $manipulations->focalpoint->data : (object) array(
+			'x' => 0,
+			'y' => 0
+		);
 
 		$vars['focal_point'] = array(array(
 			'x' 	  => $manipulation->x,
